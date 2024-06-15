@@ -46,7 +46,7 @@ WaterScenes-Tracking (root)
 | Column | Label      | Note                                               |
 |------|------------|----------------------------------------------------|
 | 1    | Frame number       |   start from 1                                                 |
-| 2    | Indentity number       |           start from 0                                         |
+| 2    | Indentity number       |           start from 1                                         |
 | 3, 4, 5, 6    | Box left, top, width, height     |                                                    |
 | 7    | Confidence score      |                                                    |
 | 8    | Class     |  Refer to [Class](#Class)                                                  |
@@ -68,6 +68,7 @@ WaterScenes-Tracking (root)
 | 0    | ship       |                                                    |
 | 1    | boat       |                                                    |
 | 2    | vessel     |                                                    |
+| -1   | no-object  | only for radar point clouds                        |
 
 ### Radar Format
 Radar point clouds are stored in csv files.
@@ -87,6 +88,8 @@ Each csv file contains a set of points in a specific timestamp:
 | comp_velocity | absolute velocity of the point (in m/s)                         |
 | u             | x-axis on the image plane                                       |
 | v             | y-axis on the image plane                                       |
+| label         | class label of this point (Refer to [Class](#Class))            |
+| instance      | instance id of this point (0 is for no-object)                  |
 
 
 ### GPS Format
